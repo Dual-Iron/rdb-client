@@ -7,7 +7,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
     - name: Install latest nightly
@@ -18,7 +18,7 @@ jobs:
         target: x86_64-pc-windows-msvc
         toolchain: nightly
     - name: Build
-      run: cargo +nightly build -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --target x86_64-pc-windows-msvc --release --verbose
+      run: cargo +nightly build -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --target x86_64-pc-windows-msvc --release
     - name: UPX
       uses: crazy-max/ghaction-upx@v1.4.0
       with:
