@@ -15,6 +15,3 @@ binary|A URL to a GitHub release asset, Google Drive file, or Discord attachment
 homepage|[Optional] A URL users can visit to learn more about the mod.
 
 \* When submitting a new mod, the `secret` field can be anything you want. When updating the mod later, the `secret` field must match, or you won't be able to update your mod. If you lose your secret, contact Dual (Discord ID [303617148411183105](https://discord.id/)).
-
-## Ok but tl;dr how do I submit my mod
-[Download](https://github.com/Dual-Iron/rdb-client/releases) the client, run it, and consult this page if you need help.
