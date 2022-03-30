@@ -7,7 +7,7 @@ FIELD|DESCRIPTION
 --|--
 secret|Essentially a password. Write this down somewhere and keep it *secret*.*
 name|The mod's name.
-owner|The person or group that made the mod.
+owner|The person or team of people that made the mod.
 version|The mod's current [version](https://semver.org/) that increases after each update.
 description|[Optional] A brief description of the mod.
 icon|A URL to a 128x128 PNG or JPG file.
