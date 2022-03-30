@@ -23,7 +23,7 @@ jobs:
       uses: crazy-max/ghaction-upx@v1.4.0
       with:
         args: --best --lzma
-        file: target/x86_64-pc-windows-msvc/release/rdb-client.exe
+        files: target/x86_64-pc-windows-msvc/release/rdb-client.exe
     - name: Upload
       uses: actions/upload-artifact@v3.0.0
       with:
