@@ -45,33 +45,37 @@ fn user_prompt(
 }
 
 fn main() {
-    match run() {
+    let mut term = Term::stdout();
+
+    match run(&mut term) {
         Ok(()) => {}
         Err(e) => {
             eprintln!("An error occurred while executing! {}", style(e).red())
         }
     }
+
+    println!("\nPress any key to exit.");
+
+    _ = term.read_key();
 }
 
-fn run() -> std::io::Result<()> {
-    let mut term = Term::stdout();
-
+fn run(term: &mut Term) -> std::io::Result<()> {
     printi!("{}", style("secret      ").cyan());
-    let secret = user_prompt(&mut term, max_len(500), non_empty)?;
+    let secret = user_prompt(term, max_len(500), non_empty)?;
     printi!("{}", style("name        ").cyan());
-    let name = user_prompt(&mut term, name_and_owner_chars, non_empty)?;
+    let name = user_prompt(term, name_and_owner_chars, non_empty)?;
     printi!("{}", style("owner       ").cyan());
-    let owner = user_prompt(&mut term, name_and_owner_chars, non_empty)?;
+    let owner = user_prompt(term, name_and_owner_chars, non_empty)?;
     printi!("{}", style("version     ").cyan());
-    let version = user_prompt(&mut term, max_len(50), valid_semver)?;
+    let version = user_prompt(term, max_len(50), valid_semver)?;
     printi!("{}", style("description ").cyan());
-    let desc = user_prompt(&mut term, max_len(500), |_| true)?;
+    let desc = user_prompt(term, max_len(500), |_| true)?;
     printi!("{}", style("icon        ").cyan());
-    let icon = user_prompt(&mut term, max_len(500), valid_url)?;
+    let icon = user_prompt(term, max_len(500), valid_url)?;
     printi!("{}", style("binary      ").cyan());
-    let binary = user_prompt(&mut term, max_len(500), valid_binary)?;
+    let binary = user_prompt(term, max_len(500), valid_binary)?;
     printi!("{}", style("homepage    ").cyan());
-    let homepage = user_prompt(&mut term, max_len(500), valid_url_or_empty)?;
+    let homepage = user_prompt(term, max_len(500), valid_url_or_empty)?;
 
     printi!(
         "\nTo send this entry to rdb, press {}.\nTo cancel this operation, press {}. ",
@@ -100,6 +104,8 @@ fn run() -> std::io::Result<()> {
                     "There was an {err}: {}",
                     response.text().unwrap_or_else(|_| status.to_string())
                 )
+            } else {
+                println!("Successfully submitted {} to rdb!", style(name).green())
             }
         }
     }
