@@ -10,7 +10,7 @@ You should have a few things ready:
 Once you've got that, just [download](https://github.com/Dual-Iron/rdb-client/releases/latest) and run the program.
 
 <details>
-<summary>Fields you'll fill out</summary>
+<summary>Documentation</summary>
 
 FIELD|DESCRIPTION
 --|--
@@ -30,8 +30,15 @@ homepage|[Optional] A URL users can visit to learn more about the mod.
 ## Integrating with GitHub
 Submitting mods over and over can be tedious. To fix this, you can add a webhook to your GitHub repository. Every time you publish a release, it will be reflected on rdb.
 
+<details open>
+<summary>Video example of setup</summary>
+
+https://user-images.githubusercontent.com/31146412/161165157-5d44de5f-e2bb-43e3-876c-807b9a05ae60.mp4
+  
+</details>
+
 <details>
-<summary>Fields inferred by the webhook</summary>
+<summary>Webhook documentation</summary>
 
 FIELD|WHERE IT COMES FROM
 secret|Given in the URL.
