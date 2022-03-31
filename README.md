@@ -9,7 +9,9 @@ You should have a few things ready:
 
 Once you've got that, just [download](https://github.com/Dual-Iron/rdb-client/releases/latest) and run the program.
 
-## Extra help
+<details>
+<summary>Fields you'll fill out</summary>
+
 FIELD|DESCRIPTION
 --|--
 secret|Essentially a password. Write this down somewhere and keep it *secret*.*
@@ -22,3 +24,23 @@ binary|A URL to a GitHub release asset, Google Drive file, or Discord attachment
 homepage|[Optional] A URL users can visit to learn more about the mod.
 
 \* When submitting a new mod, the `secret` field can be anything you want. When updating the mod later, the `secret` field must match, or you won't be able to update your mod. If you lose your secret, contact Dual (Discord ID [303617148411183105](https://discord.id)).
+
+</details>
+
+## Integrating with GitHub
+Submitting mods over and over can be tedious. To fix this, you can add a webhook to your GitHub repository. Every time you publish a release, it will be reflected on rdb.
+
+<details>
+<summary>Fields inferred by the webhook</summary>
+
+FIELD|WHERE IT COMES FROM
+secret|Given in the URL.
+name|The repository name.
+owner|The repository author or organization.
+version|The release's tag name.
+description|The repository description at the time of publishing.
+icon|`https://raw.githubusercontent.com/{repo-name}/{tag-name}/icon.png`
+binary|The last asset (alphabetically) in the release.
+homepage|The repository's homepage, or the GitHub repository.
+
+</details>
