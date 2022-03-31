@@ -1,8 +1,10 @@
 # rdb-client
 This is a client used to interact with rdb, the **R**ealm **d**ata**b**ase of mods.
 
-Currently, this client just submits mods to the database. To submit a mod, [download](https://github.com/Dual-Iron/rdb-client/releases/latest) and run the program and fill in fields as prompted.
+## Submitting a mod
+Just [download](https://github.com/Dual-Iron/rdb-client/releases/latest) and run the program.
 
+## Extra help
 FIELD|DESCRIPTION
 --|--
 secret|Essentially a password. Write this down somewhere and keep it *secret*.*
