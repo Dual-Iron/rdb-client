@@ -9,7 +9,7 @@ You should have a few things ready:
 
 Once you've got that, just [download](https://github.com/Dual-Iron/rdb-client/releases/latest) and run the program.
 
-<details>
+<details open>
 <summary>What to put for each field</summary>
 
 FIELD|DESCRIPTION
@@ -37,8 +37,8 @@ https://user-images.githubusercontent.com/31146412/163689916-df787775-ce33-478e-
 
 </details>
 
-<details>
-<summary>What parts matter</summary>
+<details open>
+<summary>How the webhook works</summary>
 
 FIELD|WHERE IT COMES FROM
 --|--
